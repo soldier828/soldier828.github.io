@@ -1,0 +1,1 @@
+- 裁剪Celeba的人脸，利用MTCNN，开始一会就感觉很慢，以前裁剪webface没有这么慢。第二天来一看居然说gpu显存不足。我既没有多线程，也没有干别的，这怎么可能。结果发现内存（8g）几乎处于爆炸的状态，发现是nautilus的一个进程，这不是我装的Ubuntu的 open terminal here那个程序吗。。。因此关掉了所有的terminal，发现还是不行。。。无奈只能kill nautilus，此时一个finder窗口关闭。。。。原来finder是nautilus，原来那个finder我打开了 Celeba 的截图结果。。。。说来也坑，Celeba所有图片（20w）在一个文件夹下（没有按人头分文件夹），所以裁图结果也在一个文件夹下，因此我的缩略图模式所需的内存不断增大，MTCNN越来越慢，直到最后崩溃！ WTF

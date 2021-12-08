@@ -1,0 +1,1175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hux Blog</title>
+    <description>关于程序与设计、黑客与画家 | 黄玄，Web &amp; Mobile Lover，Software Engineer，UX Designer | 这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界。</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Wed, 08 Dec 2021 20:41:14 +0800</pubDate>
+    <lastBuildDate>Wed, 08 Dec 2021 20:41:14 +0800</lastBuildDate>
+    <generator>Jekyll v4.2.1</generator>
+    
+      <item>
+        <title>日常code相关总结12</title>
+        <description>&lt;h1 id=&quot;图片清晰&quot;&gt;图片清晰&lt;/h1&gt;
+&lt;h2 id=&quot;opencv过一遍&quot;&gt;opencv过一遍&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;无法解决：图片残缺，opencv只会报warning，无法catch
+    &lt;h2 id=&quot;skimage过一遍&quot;&gt;skimage过一遍&lt;/h2&gt;
+  &lt;/li&gt;
+  &lt;li&gt;解决图片残缺问题
+https://github.com/zeakey/tools/blob/master/python/rm_bad_imgs.py&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;nvidia-单卡监控&quot;&gt;NVIDIA 单卡监控&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nvidia-smi dmon -i 15 -s -u&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 05 Nov 2018 09:16:09 +0800</pubDate>
+        <link>http://localhost:4000/program/2018/11/05/summary-12/</link>
+        <guid isPermaLink="true">http://localhost:4000/program/2018/11/05/summary-12/</guid>
+        
+        <category>program</category>
+        
+        
+        <category>program</category>
+        
+      </item>
+    
+      <item>
+        <title>日常code相关总结11</title>
+        <description>&lt;h1 id=&quot;linux&quot;&gt;linux&lt;/h1&gt;
+&lt;h2 id=&quot;把文本分成多个文件-split&quot;&gt;把文本分成多个文件 split&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;比如万级别图片展示的网页展示&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;split -l 1000 no_bbx.html no_bbx_&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;查看文本编码方式&quot;&gt;查看文本编码方式&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;file 命令&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;多线程下载&quot;&gt;多线程下载&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cat query.gbk.res.urls | xargs -n 1 -P 64 wget -q -t 1 --timeout 1 -P test_data&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 29 Oct 2018 09:16:09 +0800</pubDate>
+        <link>http://localhost:4000/program/2018/10/29/summary-11/</link>
+        <guid isPermaLink="true">http://localhost:4000/program/2018/10/29/summary-11/</guid>
+        
+        <category>program</category>
+        
+        
+        <category>program</category>
+        
+      </item>
+    
+      <item>
+        <title>日常code相关总结09</title>
+        <description>&lt;h1 id=&quot;linux&quot;&gt;Linux&lt;/h1&gt;
+&lt;h2 id=&quot;awk&quot;&gt;awk&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;优点
+    &lt;ul&gt;
+      &lt;li&gt;相比较屏幕处理的优点，在处理庞大文件时不会出现内存溢出或是处理缓慢的问题，通常用来格式化文本信息
+        &lt;h2 id=&quot;获取linux命令pdf&quot;&gt;获取linux命令pdf&lt;/h2&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;man -t&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Use /usr/bin/groff -Tps -mandoc -c to format the manual  page,  passing  the  output  to  stdout.   The default  output  format  of  /usr/bin/groff  -Tps -mandoc -c is Postscript, refer to the manual page of /usr/bin/groff -Tps -mandoc -c for ways to pick an alternate format.&lt;/li&gt;
+      &lt;li&gt;简而言之转成ps，且输出到stdout&lt;/li&gt;
+      &lt;li&gt;也可以用pipe输出为pdf。&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;man -t awk | ps2pdf - awk.pdf&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;mac安装ps2pdf：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;brew info ghostscript&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;manual语法协议conventions&quot;&gt;manual语法协议(conventions)&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;看stackoverflow了解到有一种语言叫Brainfuck。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The list below shows conventional or suggested sections. Most manual pages should include at least the highlighted sections. Arrange a new manual page so that sections are placed in the order shown in the list.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;Sections within a manual page
+
+*NAME*
+*SYNOPSIS*
+CONFIGURATION      [Normally only in Section 4]
+*DESCRIPTION*
+OPTIONS            [Normally only in Sections 1, 8]
+EXIT STATUS        [Normally only in Sections 1, 8]
+RETURN VALUE       [Normally only in Sections 2, 3]（如socket）
+ERRORS             [Typically only in Sections 2, 3]
+ENVIRONMENT
+FILES
+VERSIONS           [Normally only in Sections 2, 3]
+CONFORMING TO
+NOTES
+BUGS
+EXAMPLE
+*SEE ALSO*
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;各种符号
+    &lt;ul&gt;
+      &lt;li&gt;Brackets ([ ]) surround &lt;strong&gt;optional arguments&lt;/strong&gt;.You can choose one or more items or no items. Do not type the square brackets themselves in the command line(hhh).&lt;/li&gt;
+      &lt;li&gt;brackets (&amp;lt; &amp;gt;) indicate that the enclosed element (parameter, value, or information) is mandatory（强制的）.&lt;/li&gt;
+      &lt;li&gt;vertical bars (|) &lt;strong&gt;separate choices&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;ellipses (…) can be repeated（比如说cp、mv输入可以是多个文件，就会用到ellipses）&lt;/li&gt;
+      &lt;li&gt;hyphen-minus
+        &lt;ul&gt;
+          &lt;li&gt;In Unix-like systems, the ASCII hyphen–minus is commonly used to specify options.&lt;/li&gt;
+          &lt;li&gt;An argument that is a &lt;strong&gt;single hyphen–minus by itself without any letters&lt;/strong&gt; usually specifies that a program should &lt;strong&gt;handle data coming from the standard input or send data to the standard output&lt;/strong&gt;.&lt;/li&gt;
+          &lt;li&gt;Two hyphen–minus characters ( – ) are used on some programs to specify “&lt;strong&gt;long options&lt;/strong&gt;” where more descriptive option names are used.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;代码规范常用&quot;&gt;代码规范（常用）&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;所有函数名（lowcase） get_sth_from()&lt;/li&gt;
+  &lt;li&gt;所有变量（lowcase） num_channels&lt;/li&gt;
+  &lt;li&gt;所有两目、三目加空格；(i, j)也要加空格&lt;/li&gt;
+  &lt;li&gt;for if等均要加大括号；且所有要前后空格。eg：for () {}&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;end&lt;/p&gt;
+</description>
+        <pubDate>Sat, 22 Sep 2018 09:17:09 +0800</pubDate>
+        <link>http://localhost:4000/program/2018/09/22/summary-09/</link>
+        <guid isPermaLink="true">http://localhost:4000/program/2018/09/22/summary-09/</guid>
+        
+        <category>program</category>
+        
+        
+        <category>program</category>
+        
+      </item>
+    
+      <item>
+        <title>日常code相关总结08</title>
+        <description>&lt;h1 id=&quot;linux-command&quot;&gt;Linux command&lt;/h1&gt;
+
+&lt;h2 id=&quot;jupyter&quot;&gt;jupyter&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;查看本机运行的server
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jupyter notebook list&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;brew 安装特定版本
+&lt;img src=&quot;http://localhost:4000/pic/日常code相关总结08/brew_formulae.png&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;brew opencv多版本共存&lt;/p&gt;
+
+&lt;p&gt;cmake find_package 的路径设置。
+cmake find_package 的搜索路径顺序&lt;/p&gt;
+
+&lt;p&gt;c++ 相对路径在CLION（其他软件中的使用）&lt;/p&gt;
+
+&lt;p&gt;在所有行中查找 字符串 出现的次数
+:%s/字符串/&amp;amp;/gn&lt;/p&gt;
+
+&lt;p&gt;5，查找与替换&lt;/p&gt;
+
+&lt;p&gt;:s（substitute）命令用来查找和替换字符串。语法如下：&lt;/p&gt;
+
+&lt;p&gt;:{作用范围}s/{目标}/{替换}/{替换标志}
+例如:%s/foo/bar/g会在全局范围(%)查找foo并替换为bar，所有出现都会被替换（g）&lt;/p&gt;
+
+&lt;p&gt;python的argv：python a.py ‘a’ ‘b’
+argv[0]==a.py&lt;/p&gt;
+</description>
+        <pubDate>Wed, 12 Sep 2018 09:17:09 +0800</pubDate>
+        <link>http://localhost:4000/program/2018/09/12/summary-08/</link>
+        <guid isPermaLink="true">http://localhost:4000/program/2018/09/12/summary-08/</guid>
+        
+        <category>program</category>
+        
+        
+        <category>program</category>
+        
+      </item>
+    
+      <item>
+        <title>日常code相关总结07</title>
+        <description>&lt;h1 id=&quot;linux-command&quot;&gt;Linux command&lt;/h1&gt;
+&lt;h2 id=&quot;拷贝到剪贴板&quot;&gt;拷贝到剪贴板&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cat ~/.ssh/id_rsa.pub | pbcopy&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;pbcopy
+    &lt;ul&gt;
+      &lt;li&gt;pbcopy  takes the standard input and places it in the specifie pasteboard. If no pasteboard is specified, the general pasteboard will be used by default.&lt;/li&gt;
+      &lt;li&gt;usage
+        &lt;ul&gt;
+          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pbcopy &amp;lt; file&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;find . -name &quot;*.png&quot; | pbcopy&lt;/code&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;vim注意事项&quot;&gt;vim注意事项&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;vim 直接会把全部内容加入到内存中，如果文件超大，会oom。做批量操作，要确定不会爆。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;git&quot;&gt;Git&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;log图形化
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git log --graph&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;示例：&lt;a href=&quot;https://stackoverflow.com/questions/5382255/how-to-read-git-log-graph&quot;&gt;How to read&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;如图
+  &lt;img src=&quot;http://localhost:4000/pic/日常code相关总结08/git_log.png&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;The &lt;strong&gt;asterisks&lt;/strong&gt; show where something was committed:
+  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;e1193f8&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;5a09431&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;30e367c&lt;/code&gt; were committed to the &lt;strong&gt;left&lt;/strong&gt; branch (yielding a | on the right branch) whereas &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;420eac9&lt;/code&gt; was committed to the &lt;strong&gt;right&lt;/strong&gt; branch (yielding a | on the left branch). And that is what 420eac9 does different from the rest: it’s the only commit to the right branch.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;查看历史提交排名
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git shortlog&lt;/code&gt;
+        &lt;ul&gt;
+          &lt;li&gt;summarize git log output&lt;/li&gt;
+          &lt;li&gt;具体参数：
+  &lt;img src=&quot;http://localhost:4000/pic/日常code相关总结08/git_short.png&quot; /&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git shortlog -nes&lt;/code&gt;
+  &lt;img src=&quot;http://localhost:4000/pic/日常code相关总结08/git_short_res.png&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;查看所有分支
+    &lt;ul&gt;
+      &lt;li&gt;列出所有分支
+        &lt;ul&gt;
+          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git branch -r （远程remote）&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;` git branch -a （所有all）`&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;pip&quot;&gt;pip&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;upgrade命令
+    &lt;ul&gt;
+      &lt;li&gt;pip install –upgrade&lt;/li&gt;
+      &lt;li&gt;Upgrade all specified packages to the newest available version. The handling of dependencies depends on the upgrade-strategy used.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;查看版本
+    &lt;ul&gt;
+      &lt;li&gt;pip -V&lt;/li&gt;
+      &lt;li&gt;一般软件查看版本：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-v&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-V&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--version&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;搜索库里某软件的所有版本(trick)
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pip install tensorflow==&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;如图
+  &lt;img src=&quot;http://localhost:4000/pic/日常code相关总结08/tf_available.png&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;python&quot;&gt;Python&lt;/h1&gt;
+&lt;h2 id=&quot;listint-转-liststr&quot;&gt;list[int] 转 list(str)&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;直接用str(list)，整体会变为字符串。因此要使用map函数，注意举一反三。
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;a = [1,2,3,4]
+a = map(str, a)
+' '.join(a) # 合成一个字符串'1 2 3 4'而不是'[1,2,3,4]'
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;file-与-base64转换&quot;&gt;file 与 base64转换&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;file2base64
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;def img_file_encode_base64(img_path):
+  file = open(img_path)
+  imgfile_data = file.read()
+  imgfile_base64 = base64.b64encode(imgfile_data)
+  file.close()
+  return imgfile_base64
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;cvimg2filebase64
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;def cvimg_encode_to_filebase64(img):
+  #  cv::img to img_file_base64
+  imgfile_data = cv2.imencode('.jpg', img)[1]  # [0] is bool [1] is data.  
+  imgfile_base64 = base64.b64encode(imgfile_data)
+  return imgfile_base64
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;filebase64tocvimg
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;def cvimg_decode_from_filebase64(imgfile_base64):
+  # img_file_base64 to cv::img
+  imgfile_data = base64.b64decode(imgfile_base64)
+  # 内存中的数据，内存并不知道是什么，所以要用dytpe=np.uint8 分段读成数组
+  npimg = np.frombuffer(imgfile_data, dtype=np.uint8);
+  source_img = cv2.imdecode(npimg, 1)
+  return source_img
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;机器学习&quot;&gt;机器学习&lt;/h1&gt;
+&lt;h2 id=&quot;val与test的一个区别&quot;&gt;val与test的一个区别&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;validation是为了评价模型是否收敛，test才是实际中使用的。因此&lt;strong&gt;减均值这种操作&lt;/strong&gt;，只用在validation里面，不用再test里面。由于没有使用减均值，阈值肯定会变化，因此test需要重新调阈值。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 05 Sep 2018 09:17:09 +0800</pubDate>
+        <link>http://localhost:4000/program/2018/09/05/summary-07/</link>
+        <guid isPermaLink="true">http://localhost:4000/program/2018/09/05/summary-07/</guid>
+        
+        <category>program</category>
+        
+        
+        <category>program</category>
+        
+      </item>
+    
+      <item>
+        <title>日常code相关总结03</title>
+        <description>&lt;h1 id=&quot;linux-command&quot;&gt;Linux command&lt;/h1&gt;
+
+&lt;h2 id=&quot;tar的版本&quot;&gt;tar的版本&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;linux 一般是GNU的tar&lt;/li&gt;
+  &lt;li&gt;mac 一般是BSD的tar&lt;/li&gt;
+  &lt;li&gt;两者不一致，会产生解压出error或者warning情况，&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;brew install gnu-tar&lt;/code&gt;，然后mac使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gtar&lt;/code&gt;即可，命令一致。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;split分割大的文件便于传输&quot;&gt;split分割大的文件，便于传输&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;split命令
+    &lt;ul&gt;
+      &lt;li&gt;split a file into pieces&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;split -b 500m data.tar &quot;data.tar.part&quot;&lt;/code&gt;，生成的文件会自动确定个数，然后命名为”data.tar.partaa”之类的。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;用cat合并
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cat home.tar.bz2.parta* &amp;gt; backup.tar.gz.joined&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;获取文件夹下所有文件夹的名字
+    &lt;ul&gt;
+      &lt;li&gt;不像文件，可以直接find。需求是只要文件夹的名字，不是目录。目的是
+        &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;ll | grep '^d' | awk '{print $10}' &amp;gt; dir_list # 为了剔除文件
+for req in $(cat dir_list); do mkdir $req/end; done #批量建文件夹
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;python-os&quot;&gt;PYTHON OS&lt;/h1&gt;
+&lt;h2 id=&quot;osmakedirs-递归建立文件夹&quot;&gt;os.makedirs 递归建立文件夹&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;类似于linux的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mkdir -p&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;os.makedirs
+    &lt;ul&gt;
+      &lt;li&gt;Super-mkdir; create a leaf directory and all intermediate ones.
+  Works like mkdir, except that any intermediate path segment (not
+  just the rightmost) will be created if it does not exist.  This is
+  recursive.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;os.mkdir
+    &lt;ul&gt;
+      &lt;li&gt;Create a directory。父级目录必须存在。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;python&quot;&gt;PYTHON&lt;/h1&gt;
+&lt;h2 id=&quot;直接return&quot;&gt;直接return&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;直接return，用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;res is None&lt;/code&gt;判断。
+    &lt;h2 id=&quot;eval字符串&quot;&gt;eval字符串&lt;/h2&gt;
+  &lt;/li&gt;
+  &lt;li&gt;ast.literal_eval
+    &lt;ul&gt;
+      &lt;li&gt;某些情况下，我们的数据结构会被引号包裹，变为字符串，此时需要去掉字符串。&lt;/li&gt;
+      &lt;li&gt;eg &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a='[3,4,5,6]'&lt;/code&gt;,为了得到list，&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a_list = ast.literal_eval(a)&lt;/code&gt;即可。&lt;/li&gt;
+      &lt;li&gt;Safely evaluate an expression node or a string containing a Python expression.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;pickle&quot;&gt;pickle&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;dump
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;with open('filename','w') as f:
+  pickle.dump(temp, f, pickle.HIGHEST_PROTOCOL)
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;load
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;fr = open('filename')
+inf = pickle.load(fr)
+fr.close()
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 20 Aug 2018 09:17:09 +0800</pubDate>
+        <link>http://localhost:4000/program/2018/08/20/summary-03/</link>
+        <guid isPermaLink="true">http://localhost:4000/program/2018/08/20/summary-03/</guid>
+        
+        <category>program</category>
+        
+        
+        <category>program</category>
+        
+      </item>
+    
+      <item>
+        <title>日常code相关总结02</title>
+        <description>&lt;h1 id=&quot;linux-command&quot;&gt;Linux command&lt;/h1&gt;
+
+&lt;h1 id=&quot;python&quot;&gt;python&lt;/h1&gt;
+&lt;h2 id=&quot;bbx的边界处理npclip&quot;&gt;bbx的边界处理，np.clip&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;np.clip(a, a_min, a_max, out=None)
+    &lt;ul&gt;
+      &lt;li&gt;Given an interval, values outside the interval are clipped to the interval edges.  For example, if an interval of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[0, 1]&lt;/code&gt; is specified, values smaller than 0 become 0, and values larger than 1 become 1.&lt;/li&gt;
+      &lt;li&gt;一般先归一化到[0,1]，然后为了鲁棒或者bbx真的在图外，用np.clip处理一下。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;randomseed&quot;&gt;random.seed&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;产生新的随机状态
+    &lt;ul&gt;
+      &lt;li&gt;random.seed(a=None)&lt;/li&gt;
+      &lt;li&gt;None or no argument seeds from current time or from an operating
+  system specific randomness source if available. If a is not None or an int or long, hash(a) is used instead.&lt;/li&gt;
+      &lt;li&gt;eg: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;random.seed(42) random.shuffle(list)&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 13 Aug 2018 09:17:09 +0800</pubDate>
+        <link>http://localhost:4000/program/2018/08/13/summary-02/</link>
+        <guid isPermaLink="true">http://localhost:4000/program/2018/08/13/summary-02/</guid>
+        
+        <category>program</category>
+        
+        
+        <category>program</category>
+        
+      </item>
+    
+      <item>
+        <title>日常code相关总结01</title>
+        <description>&lt;h1 id=&quot;linux-command&quot;&gt;Linux command&lt;/h1&gt;
+
+&lt;h2 id=&quot;tar&quot;&gt;tar&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;压缩选项compress（-j）
+    &lt;ul&gt;
+      &lt;li&gt;(c mode only) Compress the resulting archive with &lt;strong&gt;bzip2(1)&lt;/strong&gt;.  In extract or list modes, this option is ignored.  Note that, unlike other tar implementations, this implementation recognizes bzip2 compression
+  automatically when reading archives. &lt;strong&gt;因此&lt;/strong&gt;，我们会看到如果&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tar -jc&lt;/code&gt;那么命名一般是&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a.tar.bz&lt;/code&gt;,以此来标志是用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-j&lt;/code&gt;压缩。&lt;/li&gt;
+      &lt;li&gt;若仅仅简单打包，直接用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tar -cvf file.tar file/&lt;/code&gt;即可，不要加-j，否则很慢。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;压缩选项compress（-z）
+    &lt;ul&gt;
+      &lt;li&gt;(c mode only) Compress the resulting archive with gzip(1).  In extract or list modes, this option is ignored.  &lt;strong&gt;Note that&lt;/strong&gt;, unlike other tar implementations, this implementation recognizes gzip compression automatically when reading archives.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;mkdir&quot;&gt;mkdir&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;递归新建目录（-p）
+    &lt;ul&gt;
+      &lt;li&gt;Create intermediate directories as required.  If this option is not specified, the &lt;strong&gt;full path prefix of each operand must already exist&lt;/strong&gt;.  On the other hand, with this option specified, no error will be reported if a directory given as an operand already exists.  Intermediate directories are created with permission bits of rwxrwxrwx (0777) as modified by the current umask, plus write and search permission for the owner.&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mkdir -p path/to/your/nonexist/path&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;web&quot;&gt;Web&lt;/h1&gt;
+
+&lt;h2 id=&quot;图片快速生成html&quot;&gt;图片快速生成html&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;利用shell命令&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;find ./ -name '*.jpg' &amp;gt; list
+for req in $(cat list); do echo &quot;&amp;lt;img src='$req' width=&quot;40%&quot;&amp;gt;&quot; &amp;gt;&amp;gt; index.html; done
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;上述代码中&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for req in $(cat list)&lt;/code&gt;会根据空格split，因此如果文件名中有空格，结果错误。下述代码，是以行为单位的。&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;cat list| while read req; do echo &quot;&amp;lt;img src='$req'  width=&quot;40%&quot;&amp;gt;&quot; &amp;gt;&amp;gt; index.html; done
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;python-os&quot;&gt;PYTHON OS&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;os.walk 递归遍历文件夹
+    &lt;ul&gt;
+      &lt;li&gt;dirpath, dirnames, filenames = os.walk(‘root_path’)&lt;/li&gt;
+      &lt;li&gt;返回的是三元组，分别为&lt;strong&gt;当前目录路径、当前目录下文件夹（剔除.与..）、当前目录下文件&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;为了获取完整路径，可使用os.path.join。&lt;/li&gt;
+      &lt;li&gt;该函数为自动递归，直到最底层，即无文件夹可递归。&lt;/li&gt;
+      &lt;li&gt;可以修改dirnames, filenames，比如筛除某些文件、给文件排。如果修改dirnames，那么接下来的递归只会进入dirnames剩余的目录。即可实现递归特定的文件夹，或者按照某种顺序递归文件夹。&lt;/li&gt;
+      &lt;li&gt;例子&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;  import os
+  from os.path import join, getsize
+  for root, dirs, files in os.walk('python/Lib/email'):
+      print root, &quot;consumes&quot;,
+      print sum([getsize(join(root, name)) for name in files]),
+      print &quot;bytes in&quot;, len(files), &quot;non-directory files&quot;
+      if 'CVS' in dirs:
+          dirs.remove('CVS')  # don't visit CVS directories
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;python-numpy&quot;&gt;PYTHON numpy&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;np.random.shuffle 随机&lt;strong&gt;不重复&lt;/strong&gt;数组
+    &lt;ul&gt;
+      &lt;li&gt;np.random.rand可生成&lt;strong&gt;给定shape&lt;/strong&gt;的从[0,1)抽样的float数组。
+  - np.random.randint可生成&lt;strong&gt;指定范围的整数&lt;/strong&gt;，也可在此基础上生成数组，但是无法保证不重复。&lt;/li&gt;
+      &lt;li&gt;np.random.randn返回数或者数组，从标准高斯抽样，通过反归一化可生成任意高斯分布抽样。&lt;/li&gt;
+      &lt;li&gt;很多情况下，不重复的数组实际上可转化为shuffle数据集，因为不重复的数组往往是为了shuffle。&lt;/li&gt;
+      &lt;li&gt;np.random.shuffle(x), in-place 修改。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;python&quot;&gt;PYTHON&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ipython、jupyter-notebook都是code，不是bin&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;ipython code
+#!/anaconda2/bin/python
+
+# -*- coding: utf-8 -*-
+import re
+import sys
+
+from IPython import start_ipython
+
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw?|\.exe)?$', '', sys.argv[0])
+    sys.exit(start_ipython())
+# re.sub(r'(-script\.pyw?|\.exe)?$', '', sys.argv[0])表示将sys.argv[0]中的'-script.pyw?或者'.exe'用''代替
+# 也就是说去掉'-script.pyw?或者'.exe'
+# sys.argv[0]是指第一个参数，比如'python a.py'指'a.py'
+# C中的argc，在python中可由len(sys.argv)取得。
+# C中的argv[0]是'./a.out'
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;python -m package
+    &lt;ul&gt;
+      &lt;li&gt;Searches sys.path for the named module and runs the corresponding .py file as a script.&lt;/li&gt;
+      &lt;li&gt;好处在于肯定用当前的python去执行，而不是*.py顶部指定的python路径。&lt;/li&gt;
+      &lt;li&gt;example
+        &lt;ul&gt;
+          &lt;li&gt;python -m pip&lt;/li&gt;
+          &lt;li&gt;python -m IPython&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 06 Aug 2018 09:17:09 +0800</pubDate>
+        <link>http://localhost:4000/program/2018/08/06/summary-01/</link>
+        <guid isPermaLink="true">http://localhost:4000/program/2018/08/06/summary-01/</guid>
+        
+        <category>program</category>
+        
+        
+        <category>program</category>
+        
+      </item>
+    
+      <item>
+        <title>三体</title>
+        <description>&lt;h1 id=&quot;第一部地球往事&quot;&gt;第一部：地球往事&lt;/h1&gt;
+&lt;h2 id=&quot;梗概&quot;&gt;梗概&lt;/h2&gt;
+&lt;p&gt;文化大革命如火如荼地进行，天文学家叶文洁在期间历经劫难，被带到军方绝秘计划“红岸工程”。叶文洁以太阳为天线，&lt;strong&gt;向宇宙发出地球文明的第一声啼鸣（作死的源头）&lt;/strong&gt;，取得了探寻外星文明的突破性进展。三颗无规则运行的太阳主导下，四光年外的“三体文明”百余次毁灭与重生，正被逼迫不得不逃离母星，而恰在此时，他们接收到了地球发来的信息。对人性绝望的叶文洁向三体人暴露了地球的坐标，彻底改变了人类的命运。&lt;/p&gt;
+
+&lt;p&gt;地球的基础科学出现了异常的扰动，纳米科学家汪淼进入神秘的网络游戏《三体》，开始逐步逼近这个世界的真相。汪淼参加一次玩家聚会时，接触到了地球上应对三体人到来而形成的一个秘密组织（ETO）。地球防卫组织中国区作战中心通过“古筝计划”，一定程度上挫败了拯救派和降临派扰乱人类科学界和其他领域思想的图谋，获悉处于困境之中的三体人为了得到一个能够稳定生存的世界决定入侵地球。在运用超技术锁死地球人的基础科学之后，庞大的三体舰队开始向地球进发，人类的末日悄然来临。&lt;/p&gt;
+
+&lt;h2 id=&quot;主要人物&quot;&gt;主要人物&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;叶文洁：（《三体》）物理学家叶哲泰的女儿，父亲坚持不肯向非理性的狂热屈服而被批斗致死，她在那个极端年代里的悲惨遭遇，使善良而温和的她对人性失去信心，由于她在天体物理学上的非凡成就，得以与外太空的另一种生命发生联系，她以冷酷的理性向三体人发送信号并把其引到地球，初衷是借外星人的力量来引导人类更好的去发展，她在理性思考人性本质的同时，一直处于对自己的道德批判中，但短暂的动摇很快就被她看到的人们的丑恶打消了，她对人性恶的一面的理性思考使她陷入深重的精神危机，而这种精神偏执促使她成为地球三体组织的领导者。（《黑暗森林》）她基于半生心血总结出宇宙社会学的公理，并首先提出猜疑链、技术爆炸两个重要概念，启发了罗辑发现宇宙奥秘 。&lt;/li&gt;
+  &lt;li&gt;汪淼：（《三体》）物理学教授，他经由申玉菲进入科学边界，并开始了解“三体”游戏里虚拟的文明，他领导研究的纳米材料还为地球防卫军获得ETO情报提供了技术支持。&lt;/li&gt;
+  &lt;li&gt;史强：（《三体》）从未仰望过星空的粗俗警察，具有世俗智慧和原始生命力，展示出惊人的自信和能量，他观察敏锐、果敢决绝，具有极强的行动能力，凭借多数人都拥有的“常识”，以顽强的技能求得生存，史强如定海神针一般稳固理性者汪淼的信心，并带领陷入了绝望的科学家去见识蝗虫肆虐的景象，使他们领悟到“虫子”的顽强和重获希望。在拦截ETO的轮船行动中，提出利用汪淼所研究纳米材料进行对轮船的切割。（《黑暗森林》）他成为罗辑的保护者，又一次次大显身手，数次拯救罗辑的生命，并通过冬眠计划跨越到两百年后，继续稳定着未来世界。&lt;/li&gt;
+  &lt;li&gt;常伟思：亚洲太空军奠定者，将军，中国人民解放军太空军指战员。二十多年前的史强曾是常伟思担任连长的连里一名战士。中国太空军第一任司令常伟思退役，此时常伟思六十五岁。&lt;/li&gt;
+  &lt;li&gt;杨冬：叶文洁的女儿，科学家丁仪的未婚妻。因为得知科学被三体文明锁死，在查看母亲的电脑后，知道了母亲叶文洁是策划三体文明侵略地球文明的幕后指使，又悟出比“黑暗森林”更黑暗的事实：大自然并不自然。导致自己没有再活下去的勇气，而选择死亡。&lt;/li&gt;
+  &lt;li&gt;丁仪：丁仪是一个不修边幅，有些流气，却又奇才旷世，近知全知全能的角色。是杨冬的男朋友。这名物理学家因在对球状闪电①的研究中发现宏原子而闻名于世。&lt;/li&gt;
+  &lt;li&gt;申玉菲：主人公汪淼的朋友，魏成的妻子。在《三体》中是一个高冷的女人，日籍华裔物理学家，“科学边界”成员，地球三体叛军之一。汪淼接触“科学边界”也是从她开始。地球三体叛军之一，坚守的拯救派，曾担任降临派的核心，与丈夫魏成一同研究三体问题，数学非常好（看出魏成的计算是在研究三体问题），很富有，但大量的钱财却不知从何而来，住在高档别墅区。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;精彩章节片段&quot;&gt;精彩章节片段&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;白沐霖和叶文洁、寂静的春天&lt;br /&gt;
+白沐霖和叶文洁本来是伐木场唯二两个对『疯狂砍伐树木』有自己想法的人。白沐霖给她介绍了『寂静的春天』这本书，随后白沐霖想给中央写信，控诉这种破坏环境的行为，却因为意外（也不知道是不是）让叶文洁代笔，最后被叶文洁陷害，白沐霖拒不承认是他写的信。也正是在这种环境下，叶文洁才有机会进入『红岸基地』。&lt;/li&gt;
+  &lt;li&gt;红岸基地&lt;br /&gt;
+开始叶文洁得到的信息是红岸基地的巨大天线是用来攻击外国卫星的。最后她决定再也不离开这里后（因为密级很高），得知红岸基地是用来探索外太空生命的。由于叶文洁对人类绝望，同时又发现了恒星（太阳）可以放大功率以恒星级的功率发送信号，向太空发出了人类的信号。8年后，距离地球4光年的三体星球发回了电报，叶文洁在收到三体星球一名联络员的不要回复的警告后，毅然决然回了电报，请求三体拯救地球。同时三体星球根据4光年定位了地球。&lt;/li&gt;
+  &lt;li&gt;三体游戏&lt;br /&gt;
+基本上是模仿了三体星球的真实状态，只不过由人类的样貌进行。其中有意思的片段有：地球是火海上的一个球壳、地球是火海上了两层球壳结构（这解释了星星不动太阳动的原因）、冯诺依曼找秦始皇通过3千万士兵做成集成电路计算乱纪元与恒纪元的时间、主人公最终领悟三体结构（三科球体的运动规律）合理地解释了三星当空及二星当空。&lt;/li&gt;
+  &lt;li&gt;三体星发给降临派的截断信息&lt;br /&gt;
+三体星的智慧质子，通过将质子二维展开，使得质子变为了智能体。这里的多维展开很难理解也很有意思，也许现实世界也是这样，我们的宇宙就像一个质子内部的世界，因为不在一个维度，我们永远无法证实这个事实。智子以光速运行，在地球控制所有的高能粒子器，从而使地球科技进步停止。因为经计算，三体星排除了太空飞船需要几十年的的时间到达地球（最快十分之一光速运行），那是地球的发展会超过他们（因为地球人的每一个科技时代间隔快速缩短）。同时智子也造成了地球的神迹（在人的视网膜显示文字），以及『整个宇宙将为你闪烁』。&lt;/li&gt;
+  &lt;li&gt;用纳米线割断巨轮&lt;br /&gt;
+在巴拿马运河，0.5m的间隔铺设纳米线横款运河，直接解体了巨轮，同时同其中找到了三体星发给降临派的截断信息，并被军方恢复。三体星的人居然是以思维交流，因此无法撒谎！&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;第二部黑暗森林&quot;&gt;第二部：黑暗森林&lt;/h1&gt;
+&lt;h2 id=&quot;梗概-1&quot;&gt;梗概&lt;/h2&gt;
+&lt;p&gt;三体人在利用科技锁死了地球人的科学之后，出动庞大的宇宙舰队直扑太阳系，面对地球文明前所未有的危局，人类组建起同样庞大的太空舰队，同时（PDC）利用三体人思维透明的致命缺陷，制订了“面壁计划”。出乎意料地，社会学教授罗辑被选出作为四位“面壁者”之一，展开对三体人的秘密反击。虽然三体人自身无法识破人类的计谋，却依靠由地球人中的背叛者挑选出的“破壁人”与“面壁者”进行智慧博弈。&lt;/p&gt;
+
+&lt;p&gt;在这场你死我活的文明生存竞争中，罗辑由一开始的逃避和享乐主义逐渐意识到自己的责任心，想到了一个对抗三体文明入侵的办法。科研军官章北海试图借一场陨石雨干涉飞船推进形式的研究方向。近二百年后，获选增援未来的他在人类舰队被“水滴”清除殆尽前，成功抢夺战舰逃离。此时罗辑证实了宇宙文明间的黑暗森林法则，任何暴露自己位置的文明都将很快被消灭。借助于这一发现，他以向全宇宙公布三体世界的位置坐标相威胁，暂时制止了三体对太阳系的入侵，使地球与三体建立起脆弱的战略平衡。&lt;/p&gt;
+
+&lt;h2 id=&quot;主要人物-1&quot;&gt;主要人物&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;罗辑
+在人类对抗即将到来的三体文明时的中期核心人物。因为在第一部的结尾叶文洁告诉了他宇宙法则：猜疑链和技术爆炸，从而使其成为了三体文明唯一要消灭的地球人。因此他是最重要的面壁人。冬眠醒来之后的罗辑被认为是有一个古代的杞人忧天的笑话，但很快，罗辑领悟出来的“黑暗森林”理论被证实，以死相逼，最终换来的三体文明的妥协，罗辑从面壁者升级为“手持达摩克利斯之剑的”执剑人，一旦三体文明有任何撕毁合约的举动，罗辑被授权有放出同时毁灭两个世界的大招，完成了从小人物到大英雄的升华。而最后的罗辑，也成了地球乃至整个太阳系的守墓人。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;史强
+本来是一个地痞警察，外粗内细、不拘小节，没有信仰却意志坚定，最早是被他的老首长拉进了最初的地球防务安全部，提出的奇思妙想成功杀死了伊文斯，瓦解了ETO总部。后来，史强参与面壁计划成为罗辑的监护人，所以罗辑的故事基本都有史强的参与，而虽然史强所占的篇幅不多，但却贯穿全篇，这再次证明了一个道理，要多露脸，就得跟着主角混。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;庄颜
+在罗辑刚成为面壁者的时候，提出的各种非分要求之一，请求史强帮他找一个他心目中的完美女孩。而在不知道做了多少政治工作、多少思想工作之后，史强终于从中央美院毕业找来了这么一个叫庄颜的画国画的女孩。毫无疑问，庄颜是以面壁计划的牺牲品介入的，完成任务之后就带着他们的孩子离开了，从此不知所踪。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;精彩章节片段-1&quot;&gt;精彩章节片段&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;三体无法轻易战胜地球的设定
+    &lt;ul&gt;
+      &lt;li&gt;三体人用思想交流，无法识破地球人的谎言。因此人类世界启动了面壁计划，选了四个面壁者，可以调用极大的资源用以抗衡。他们的主要任务是掩盖自己真实的意图，即使在智子的监控之下，也可以出奇制胜。同样三体世界在地球选了四个破壁人，用地球人识破地球人的谎言。&lt;/li&gt;
+      &lt;li&gt;黑暗森林法则。内容包括猜疑链和技术爆炸。
+        &lt;ul&gt;
+          &lt;li&gt;猜疑链。第一层：当我们向其他文明宣布我们的存在，我们无法知道它们怎么想，即使我们表达我们的善意。第二层：对方相信我们的善意（也许是假装），并向我们表达他们的善意，他们无法得知我们知道他们善意后想法（真实想法，也许也是假装）。如此不断重复，不管是否有人是善意的，最后得出的结论就是&lt;strong&gt;必须消灭对方，否则对方就会消灭我们&lt;/strong&gt;。&lt;/li&gt;
+          &lt;li&gt;技术爆炸。每一个文明技术的发展，都不是均匀的，虽然三体世界技术发展开始是均匀的，但是其后期由短暂十分之一光速直接达到光速飞行，也一样是技术爆炸。反观人类，技术爆炸更为明显。短短的几百年，技术极大发展。正是由于技术爆炸，即使两个文明目前相处良好，但由于猜疑链，最后一定还是毁灭的结果。&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;罗辑在被意外选择为面壁者之后，逃避责任，用手中的权利找老婆，在『类似西欧』的庄园定居，美滋滋。这也使得他实际称为最符合面壁者要求的人。在他逍遥的这段时间中，先后有面壁者被破壁人识破而宣告失败。最后，人类世界普遍认为当初面壁者计划就是一个笑话。&lt;/li&gt;
+  &lt;li&gt;逻辑悟出黑暗森林法则，同时部署了太阳系的核弹爆炸系统，从而可以向宇宙发射三体的坐标信息。在此过程中，三体世界迎来了技术爆炸，飞行速度提升为光速，因此他们决定消灭人类。在最后的关头，逻辑向世界展示了他的黑暗森林威慑，迫使三体舰队停止运行同时让智子离开太阳系。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;第三部死神永生&quot;&gt;第三部：死神永生&lt;/h1&gt;
+&lt;h2 id=&quot;梗概-2&quot;&gt;梗概&lt;/h2&gt;
+&lt;p&gt;身患绝症的云天明买下一颗星星送给暗恋着的大学同学程心，而程心因参与（PIA）向三体舰队发射探测器的工作，却想让航天专业背景的他放弃安乐死，作为被执行人将大脑捐献给阶梯计划。与三体文明的战争使人类首次看到了宇宙黑暗的真相，地球文明因为黑暗森林打击的存在如临大敌，不敢在太空中暴露自己。在零道德的宇宙中发起黑暗战役的战舰被诱导返航，却受到有道德的地球文明审判。&lt;/p&gt;
+
+&lt;p&gt;不称职的懦弱少女程心被选来充当掌握地球命运的执剑人，她因为罗辑的成功将这看作一项只需花费时间的任务，刚刚任职水滴就向地球发动攻击，程心为了忠于人性做出了错误的决定。&lt;/p&gt;
+
+&lt;p&gt;三体文明毁灭了黑暗森林威慑系统，然后开始肆无忌惮地统治人类。他们将所有人类聚集在澳大利亚，以此来减少人口，同时摧毁人类的科学。&lt;/p&gt;
+
+&lt;p&gt;在警示下继续逃离的“蓝色空间”号，受到具有发射引力波能力的“万有引力”号与两个同行的“水滴”追击，其上的人员进入四维空间摧毁水滴并占领了“万有引力”号，启动引力波广播向宇宙公布了三体星系的坐标。&lt;/p&gt;
+
+&lt;p&gt;云天明与地球取得联系，通过讲述三个自己编创的童话故事，向程心透露大量情报；人类自以为悟出了生存竞争的秘密，开始进行掩体计划，维德领导的空间曲率驱动研究因为程心的错误判断被终止，使得人类最终没有能够逃脱被高级文明毁灭的命运。因为宇宙中还存在更强大的文明，战争的方式和武器已经远超出人类的想象，极高文明发出了一张卡片大小的“二向箔”，使整个太阳系压缩为二维平面而毁灭。&lt;/p&gt;
+
+&lt;p&gt;在地球人类接近灭亡之际，只有程心和艾AA两个幸存者乘坐光速飞船离开。罗辑成为设置于冥王星的地球文明博物馆的“守墓人”，她们在冥王星带走人类文明的精华。在云天明送的恒星的一颗行星上，程心遇到关一帆且探讨了宇宙降维的真相，然而超乎一切之上的力量要求宇宙归零重生，在黑域中穿越长达1800万年的时空……程心没有等到云天明到来，和关一帆在小宇宙中短暂居住后重新进入大宇宙生活。&lt;/p&gt;
+
+&lt;h2 id=&quot;主要人物-2&quot;&gt;主要人物&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;云天明
+原来是孤僻的一个人，但在上学时爱上程心，又患上肺癌，通过一笔意外之财参与“群星计划”将DX3906恒星（后改为S74390E2）赠送给程心。后因程心推荐加入阶梯计划，通过探测器将大脑运送至三体第一舰队处，结果因计算错误，轨道出现偏差，失踪。后被三体第一舰队捕获。程心与云天明在拉格朗日点通讯，云天明讲了三个童话，以此来告诉地球三体科技的进步之处，同时也暗示了达到光速飞行的方法。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;程心
+出生于公元世纪的北京，幼年时被遗弃，后被女子程秀秀收养，取名叫程心。程秀秀的男友因此而与程秀秀分手。在危机初年是航天发动机专业博士，毕业后进入为新一代长征火箭研制发动机的课题组，之后自愿被抽调进入行星防御理事会战略情报局（简称PIA），在PIA第一次全体会议中提出了阶梯计划，该计划由于飞行器故障发生路线偏离，程心随后冬眠。在威慑纪元冬眠苏醒后成为第二任执剑人，但她在三体世界开始对地球进行进攻时没有启动广播，（该举动断绝了人类“生”的希望，直接导致澳大利亚大移民和地球治安军与反抗组织的产生）。在广播纪元和云天明见面，使人类获得许多情报。在威慑纪元创立了星环公司，掩体纪元初期把星环公司的控制权交给托马斯·维德以便后者研制曲率驱动飞船。掩体纪元后期冬眠苏醒后说服维德放弃对太阳系联邦的抵抗。（由此，第二次断绝人类生的希望）太阳系二维化打击开始后乘坐搭载了星环公司研制出的可以达到光速的曲率驱动引擎的星环号飞船逃出太阳系，成为地球文明最后逃出的两个幸存者之一。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;托马斯·维德
+原行星防御理事会战略情报局（PIA）首任局长。人类社会极端理智的代表人物，喜欢欣赏他人的绝望与痛苦。在三体的分析中威慑度100%（然而却没有当选执剑人），且没有罗辑和程心的波动。认为兽性比人性更重要（“失去人性，失去很多；失去兽性，失去一切”）。因为对程心的承诺而放弃光速飞船的研究并交还星环城，后在太阳系联邦法庭审判中被判处死刑。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;艾AA
+威慑纪元时期的地球博士生，采用新的方法观测到DX3906拥有两颗行星。在程心冬眠苏醒后成为程心的伙伴、好友和合伙人，实际管理星环公司。最后也成为逃离太阳系的两人之一。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;精彩章节片段-2&quot;&gt;精彩章节片段&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;阶梯计划
+针对发送探测器探测三体舰队的计划，程心创造性地提出了利用核弹爆炸多级加速探测器。
+    &lt;ul&gt;
+      &lt;li&gt;有人质疑加速比，因为如果带那么多核弹其质量很大。根据F=ma，加速度很小，根本不可能加速到很快。对此，程心提出将核弹部署到太阳系的轨道上面，这样探测器的质量就很小了。通过核弹辐射，对探测器进行加速。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 02 May 2018 09:17:09 +0800</pubDate>
+        <link>http://localhost:4000/read/2018/05/02/santi/</link>
+        <guid isPermaLink="true">http://localhost:4000/read/2018/05/02/santi/</guid>
+        
+        <category>read</category>
+        
+        
+        <category>read</category>
+        
+      </item>
+    
+      <item>
+        <title>CS231n-Assignment1</title>
+        <description>&lt;h1 id=&quot;knn部分&quot;&gt;kNN部分&lt;/h1&gt;
+&lt;h2 id=&quot;学习到的新函数&quot;&gt;学习到的新函数&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;plt.imshow&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;Display an image on the axes.
+
+Parameters
+----------
+X : array_like, shape (n, m) or (n, m, 3) or (n, m, 4)
+    Display the image in `X` to current axes.  `X` may be an
+    array or a PIL image. If `X` is an array, it
+    can have the following shapes and types:
+
+    - MxN -- values to be mapped (float or int)
+    - MxNx3 -- RGB (float or uint8)
+    - MxNx4 -- RGBA (float or uint8)
+
+    The value for each component of MxNx3 and MxNx4 float arrays should  
+    be in the range 0.0 to 1.0. MxN arrays are mapped to colors based on
+    the `norm` (mapping scalar to scalar) and the `cmap`  
+    (mapping the normed scalar to a color).
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;输入可以有两种形式，一种PI另一种数组。当是数组的时候有三种shape，(n, m)、(n, m, 3)、(n, m, 4)。需要注意三种shape的数据类型以及&lt;strong&gt;范围&lt;/strong&gt;。尤其是如果是0-255的float，记得data.astype(‘uint8’)。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;python3与python2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;# python2中 / 是截断除法；在python3中 / 是精确除法, //是截断除法。导入后，/变为精确除法
+from __future__ import division
+from __future__ import absolute_import
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;对于第二条命令，如果你在main.py中写import string,那么在Python 2.4或之前, Python会先查找当前目录下有没有string.py, 若找到了，则引入该模块，然后你在main.py中可以直接用string了。如果你是真的想用同目录下的string.py那就好，但是如果你是想用系统自带的标准string.py呢？那其实没有什么好的简洁的方式可以忽略掉同目录的string.py而引入系统自带的标准string.py。这时候你就需要from _&lt;em&gt;future_&lt;/em&gt; import absolute_import了。这样，&lt;strong&gt;你就可以用import string来引入系统的标准string.py, 而用from pkg import string来引入当前目录下的string.py了&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/langb2014/article/details/53305246&quot;&gt;参考&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ipython 自动重载模块&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;# Some more magic so that the notebook will reload external python modules;
+# see http://stackoverflow.com/questions/1907993/autoreload-of-modules-in-ipython
+%load_ext autoreload
+%autoreload 2
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;利用subplot画超屌的展示集&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;classes = ['plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
+num_classes = len(classes)
+samples_per_class = 7
+for y, cls in enumerate(classes):    #y is idx
+    idxs = np.flatnonzero(y_train == y)
+    idxs = np.random.choice(idxs, samples_per_class, replace=False)
+    for i, idx in enumerate(idxs):
+        plt_idx = i * num_classes + y + 1
+        plt.subplot(samples_per_class, num_classes, plt_idx)  #plt_idx从1开始
+        plt.imshow(X_train[idx].astype('uint8'))
+        plt.axis('off')
+        if i == 0:
+            plt.title(cls)
+plt.show()
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pic/cs231n/subplot.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;用F-norm（F范数）验证两个矩阵的同一性&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;difference = np.linalg.norm(dists - dists_one, ord='fro')
+#当difference很小时，人为两个矩阵相等
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;\(||A||_{F} = \sqrt{\sum_{i,j}a_{i,j}^{2}}\)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;计时模块&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;def time_function(f, *args):
+    &quot;&quot;&quot;
+    Call a function f with args and return the time (in seconds) that it took to execute.
+    &quot;&quot;&quot;
+    import time
+    tic = time.time()
+    f(*args)
+    toc = time.time()
+    return toc - tic
+
+two_loop_time = time_function(classifier.compute_distances_two_loops, X_test)
+print('Two loop version took %f seconds' % two_loop_time)
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;画errorbar图&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;for k in k_choices:
+    accuracies = k_to_accuracies[k]
+    plt.scatter([k] * len(accuracies), accuracies) # 散点图，同一个横坐标扩展为len(accuracies)个
+
+# plot the trend line with error bars that correspond to standard deviation
+accuracies_mean = np.array([np.mean(v) for k,v in sorted(k_to_accuracies.items())])
+accuracies_std = np.array([np.std(v) for k,v in sorted(k_to_accuracies.items())])
+plt.errorbar(k_choices, accuracies_mean, yerr=accuracies_std)
+plt.title('Cross-validation on k')
+plt.xlabel('k')
+plt.ylabel('Cross-validation accuracy')
+plt.show()
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pic/cs231n/errorbar.png&quot; /&gt;&lt;br /&gt;
+其实就是每个超参数下运行多次得到了多个结果，然后对结果取均值，标准差即可。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;取出k近邻&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;closest_y = self.y_train[np.argsort(dists[i])[:k]]
+# self.y_train是训练数据label，np.argsort(dists[i])是第i行距离的升序index，取出前k个。
+# 注意，y_train[list]这种用法前提是type(y_train)=np.ndarray，通过list中的索引直接取出y_train对应元素
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;np.array_split 交叉验证分割&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;Split an array into multiple sub-arrays.
+Examples
+--------
+&amp;gt;&amp;gt;&amp;gt; x = np.arange(8.0)
+&amp;gt;&amp;gt;&amp;gt; np.array_split(x, 3)
+    [array([ 0.,  1.,  2.]), array([ 3.,  4.,  5.]), array([ 6.,  7.])]
+# 最后如果不是整除，剩几个取几个
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ndarray拼接&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;X_val_train = np.vstack(X_train_folds[:i]+X_train_folds[i+1:]) # 垂直拼接
+# eg a=[[1,2,3]] b=[[4,5,6]] X_val_train = [[1,2,3],[4,5,6]]
+y_val_train = np.hstack(y_train_folds[:i]+y_train_folds[i+1:]) # 水平拼接
+# eg a=[[1,2,3]] b=[[4,5,6]] y_val_train = [[1,2,3,4,5,6]]
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;注意上面的数组相加，如果是整体为np.array，那么是对应元素相加；但由于np.array_split的的结果是[np.array,np.array]，即多个np.array组成的list，因此这是的相加是简单拼接。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;np.linalg.norm计算各种距离&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;虽然欧式距离等可以自己实现，但是有轮子肯定要用啊。&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;Matrix or vector norm.
+
+This function is able to return one of eight different matrix norms（可以计算8种范数，  
+因此如果计算距离，需要输入x-y作为范数求解）,  
+or one of an infinite number of vector norms (described below), depending  
+on the value of the ``ord`` parameter.
+
+
+The following norms can be calculated:  
+
+=====  ============================  ==========================  
+ord    norm for matrices             norm for vectors  
+=====  ============================  ==========================  
+None   Frobenius norm                2-norm  
+'fro'  Frobenius norm                --  
+'nuc'  nuclear norm                  --  
+inf    max(sum(abs(x), axis=1))      max(abs(x))  
+-inf   min(sum(abs(x), axis=1))      min(abs(x))  
+0      --                            sum(x != 0)  
+1      max(sum(abs(x), axis=0))      as below  
+-1     min(sum(abs(x), axis=0))      as below  
+2      2-norm (largest sing. value)  as below  
+-2     smallest singular value       as below  
+other  --                            sum(abs(x)**ord)**(1./ord)  
+=====  ============================  ==========================  
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;diction的遍历&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;d = {'person': 2, 'cat': 4, 'spider': 8}
+for animal, legs in d.items():
+   print('A %s has %d legs' % (animal, legs))
+# Prints &quot;A person has 2 legs&quot;, &quot;A cat has 4 legs&quot;, &quot;A spider has 8 legs
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;注意不是使用enumerate，而是items！&lt;/p&gt;
+
+&lt;h2 id=&quot;cifar10的数据处理&quot;&gt;CIFAR10的数据处理&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.cs.toronto.edu/~kriz/cifar.html&quot;&gt;数据库介绍&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;# X原本为(10000,3072)，3072=3*32*32，即RGB相邻存储。
+# 通过transpose可以得到第一个三原色X[0][0][0][i]，i=0，1，2
+X = X.reshape(10000, 3, 32, 32).transpose(0,2,3,1)
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;矩阵距离的向量化计算&quot;&gt;矩阵距离的向量化计算&lt;/h2&gt;
+&lt;p&gt;好长，还不想看。TODO
+&lt;a href=&quot;https://zhuanlan.zhihu.com/p/21354489&quot;&gt;refer to link&lt;/a&gt;&lt;/p&gt;
+&lt;p align=&quot;right&quot;&gt;&lt;b&gt;&lt;u&gt;@2018.5.2&lt;/u&gt;&lt;/b&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;svm部分&quot;&gt;SVM部分&lt;/h1&gt;
+&lt;h2 id=&quot;学习到的新函数-1&quot;&gt;学习到的新函数&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;np.random.choice抽样序列&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;一些lr的生成函数&lt;/li&gt;
+  &lt;li&gt;colorbar图的画法&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;初始w的均值对svm-loss初始值的定量分析&quot;&gt;初始W的均值对SVM-loss初始值的定量分析&lt;/h2&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;self.W = 10^()-n) * np.random.randn(dim, num_classes)
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;W的初始方式采用如上代码，也就是说W的每一个元素的量级是10^(-n)。考虑到np.dot(X,W)，其中W因为随机初始化，因此正负值数量相对均衡；X是像素值，量级10^2，因此np.dot(X,W)的每个元素的量级是10^(2-n)。又因为SVM-loss对于每一个样本的loss值需要乘以类别数，故每个样本的loss贡献为量级 10^(2-n)*class。又因为总体loss需要加和再平均，因此量级一样。&lt;br /&gt;
+具体到本例中，class=10，故初始loss的量级 10^(3-n)。同时同理论分析可知，SVM的初始loss（W很小，使得所有WX元素基本为0）理论值为class-1，本例中为loss=9。&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;当W的初始均值很小时，np.dot(X,W)的每一项元素基本都为0，因此loss达到理论值为class-1，即9。&lt;/li&gt;
+  &lt;li&gt;当W的初始均值过大，其导致loss量级为10^(3-n)。
+    &lt;ul&gt;
+      &lt;li&gt;若n=3，即均值0.001，loss量级1，因此误差是个位的误差，当然由于一定程度是定性分析，也有可能导致误差扩散到十位。实验中，这种情况的loss初始值在20左右。&lt;/li&gt;
+      &lt;li&gt;若n=4，均值0.01，loss量级10，误差为十位误差，实验中loss初值为150左右。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;因为，为了保证W的初值不影响初始loss的理论值（由于误差使得WX的初始值不为0），10^(3-n)应该为10^(-1)量级，因为理论loss为10^0~10^1量级，故n至少为4，即均值0.0001。&lt;strong&gt;实际上，该操作只用于check代码，如果没有问题，可以吧均值放大，loss同样会快速下降&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 01 May 2018 16:11:09 +0800</pubDate>
+        <link>http://localhost:4000/dl/2018/05/01/cs231n/</link>
+        <guid isPermaLink="true">http://localhost:4000/dl/2018/05/01/cs231n/</guid>
+        
+        <category>cs231n</category>
+        
+        
+        <category>DL</category>
+        
+      </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="关于程序与设计、黑客与画家 | 黄玄，Web & Mobile Lover，Software Engineer，UX Designer | 这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界。">
+    <meta name="keywords" content="黄玄, Hux黄玄, Hux, 鬼栈, huxpro, @huxpro, 黄玄的博客, Hux Blog, 博客, 个人网站, 互联网, Web, JavaScript, 前端, 设计">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Open Graph -->
+    <meta property="og:title"
+        content="CPU_Introduction - 黄玄的博客 | Hux Blog">
+    
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="Intel &amp; AMD
+
+  在1980年代时，英特尔在全球是前十大的半导体销售的业者（1987年是第10名），而在1991年以后，英特尔达到了第一名的位置之后就没有再变动了。而其次的 半导体公司 包括AMD、三星、德州仪器、东芝与意法半导体。而唯一在x86处理器市场中能够与Intel相抗衡的是AMD。英特尔（Intel）和超威半导体（AMD）(Advanced Micro Devi...">
+    
+    <meta property="article:published_time" content=" 2017-11-18T14:20:09Z">
+    
+    
+    
+    <meta property="article:tag" content="program">
+    
+    
+    <meta property="og:image" content="http://localhost:4000https://github.com/Huxpro.png">
+    <meta property="og:url" content="http://localhost:4000/program/2017/11/18/CPU_Introduction/">
+    <meta property="og:site_name" content="黄玄的博客 | Hux Blog">
+
+    <title>CPU_Introduction - 黄玄的博客 | Hux Blog</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://localhost:4000/program/2017/11/18/CPU_Introduction/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href=" /css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href=" /css/hux-blog.min.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    <!-- Google AdSense -->
+    <script data-ad-client="ca-pub-6487568398225121" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Hux Blog</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div id="huxblog_navbar">
+                <div class="navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <a href="/archive/">Archive</a>
+                        </li>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <li class="search-icon">
+                            <a href="javascript:void(0)">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <script>
+        // Drop Bootstarp low-performance Navbar
+        // Use customize navbar with high-quality material design animation
+        // in high-perf jank-free CSS3 implementation
+        var $body = document.body;
+        var $toggle = document.querySelector('.navbar-toggle');
+        var $navbar = document.querySelector('#huxblog_navbar');
+        var $collapse = document.querySelector('.navbar-collapse');
+
+        var __HuxNav__ = {
+            close: function () {
+                $navbar.className = " ";
+                // wait until animation end.
+                setTimeout(function () {
+                    // prevent frequently toggle
+                    if ($navbar.className.indexOf('in') < 0) {
+                        $collapse.style.height = "0px"
+                    }
+                }, 400)
+            },
+            open: function () {
+                $collapse.style.height = "auto"
+                $navbar.className += " in";
+            }
+        }
+
+        // Bind Event
+        $toggle.addEventListener('click', function (e) {
+            if ($navbar.className.indexOf('in') > 0) {
+                __HuxNav__.close()
+            } else {
+                __HuxNav__.open()
+            }
+        })
+
+        /**
+         * Since Fastclick is used to delegate 'touchstart' globally
+         * to hack 300ms delay in iOS by performing a fake 'click',
+         * Using 'e.stopPropagation' to stop 'touchstart' event from 
+         * $toggle/$collapse will break global delegation.
+         * 
+         * Instead, we use a 'e.target' filter to prevent handler
+         * added to document close HuxNav.  
+         *
+         * Also, we use 'click' instead of 'touchstart' as compromise
+         */
+        document.addEventListener('click', function (e) {
+            if (e.target == $toggle) return;
+            if (e.target.className == 'icon-bar') return;
+            __HuxNav__.close();
+        })
+    </script>
+    <!-- Search -->
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/img/home-bg.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+
+
+
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/img/home-bg.jpg');
+        background: ;
+    }
+
+    
+</style>
+
+<header class="intro-header" >
+
+    <div class="header-mask"></div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/archive/?tag=program" title="program">program</a>
+                        
+                    </div>
+                    <h1>CPU_Introduction</h1>
+                    
+                    <h2 class="subheading"></h2>
+                    <span class="meta">Posted by Hux Blog on November 18, 2017</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <!-- Multi-Lingual -->
+                
+
+				<h1 id="intel--amd">Intel &amp; AMD</h1>
+<ul>
+  <li>在1980年代时，英特尔在全球是前十大的半导体销售的业者（1987年是第10名），而在1991年以后，英特尔达到了第一名的位置之后就没有再变动了。而其次的 <strong>半导体公司</strong> 包括AMD、三星、德州仪器、东芝与意法半导体。而唯一在x86处理器市场中能够与Intel相抗衡的是AMD。英特尔（Intel）和超威半导体（AMD）(Advanced Micro Devices)占领了 <strong>个人电脑CPU</strong> 绝大部分市场。</li>
+  <li>Intel与AMD两家本是同根生，有着很深的渊源，他们的创始人都来自同一家企业——仙童半导体公司，甚至还有过密切合作。</li>
+  <li>Intel的两位创业者,<strong>诺伊斯</strong> 是集成电路发明人之一，<strong>摩尔</strong> 则是著名的“摩尔定律”提出者，他们在创办Intel之前就已经是业界威望很高的名流，这些先天性优势是它在短时间内就能吸引到大量的优秀技术人才，在微处理器的研制上一开始就处于领先地位。反观AMD，其创始人桑德斯只是销售出身，创业之路举步维艰。正因为如此，AMD初期的定位很明确，以市场为导向，凭借质优价廉的产品努力成为各类产品的第二供应商。作为第二供应商要求的不是技术领先与创新能力，而是学习模仿以及生产制造能力，显然这与AMD当时的自身条件是匹配的。而Intel则以技术发展为导向，是典型的技术领先与创新者。</li>
+  <li>在1982年，IBM迫使Intel与AMD签署协议，使后者成为8086和8088处理器的第二供应商（因为身经百战的IBM知道，如果将微处理器完全放给一家供应商，很有可能造成其坐大难控）Intel开放技术，全面授权AMD生产x86系列处理器，而AMD则放弃了自己的竞争产品，成为Intel后备供应商。双方联手合作，终于拿下了IBM的订单，也由此锁定了个人电脑技术发展路径。</li>
+</ul>
+
+<p><img src="http://localhost:4000/pic/CPU_Introduction/intelVsAmd.jpg" /></p>
+<div class="text" style="text-align:center;font-weight:bold"> Intel VS AMD </div>
+
+<h2 id="intel-product-series">intel product series</h2>
+
+<p><img src="http://localhost:4000/pic/CPU_Introduction/interCpu.jpg" /></p>
+<div class="text" style="text-align:center;font-weight:bold"> Intel CPU  酷睿&gt;奔腾&gt;赛扬 </div>
+
+<h2 id="amd-product-series">AMD product series</h2>
+
+<p><img src="http://localhost:4000/pic/CPU_Introduction/AMDCpu.jpg" /></p>
+<div class="text" style="text-align:center;font-weight:bold"> AMD CPU 锐龙&gt;AMD FX&gt;APU&gt;速龙&gt;闪龙</div>
+
+<h1 id="intel-core-系列cpu">Intel Core 系列CPU</h1>
+<h2 id="产品线">产品线</h2>
+<p>Intel Core（停产）、Core 2（停产）、Intel Core M（纤薄轻巧的2合1电脑）、Core i（i3、i5、i7、i9）</p>
+
+<h2 id="core-i-历代架构eg-i7">Core i 历代架构（eg i7）</h2>
+<p><a href="https://en.wikipedia.org/wiki/List_of_Intel_Core_i7_microprocessors">wiki</a></p>
+<ul>
+  <li>Westmere microarchitecture (1st generation)</li>
+  <li>Sandy Bridge microarchitecture (2nd generation)</li>
+  <li>Ivy Bridge microarchitecture (3rd generation)</li>
+  <li>Haswell microarchitecture (4th generation)</li>
+  <li>Broadwell microarchitecture (5th generation)</li>
+  <li>Skylake microarchitecture (6th generation)</li>
+  <li>Kaby Lake microarchitecture (7th generation)</li>
+  <li>Coffee Lake microarchitecture (8th generation)</li>
+</ul>
+
+<p>i7系列当中，大部分CPU的售价在200-600美元，而其中有小部分售价为999美元或以上（一般至尊版i7定价都是999美元，其象征意义远大于实际意义），这种价格较高的CPU被称为“英特尔® 酷睿™ i7 处理器至尊版（Intel Core i7 Extreme Edition）”。</p>
+
+<h2 id="至强xeon">至强（Xeon）</h2>
+<p>Xeon（读作/’zi:on/）是Intel的一个中央处理器品牌，中国译名至强，主要供服务器及工作站使用，亦有超级计算机采用此处理器。Intel XeonE3-1230曾因高性价比而受到电脑DIYer的热捧，有“i5的价格，i7的性能”的美誉。但随着英特尔的策略改变，使得E3-1230后续系列升价，而且主板数量少，价格也变贵，这个系列不再具有超值之选的吸引力。</p>
+
+<h2 id="cpu处理器编号">CPU处理器编号</h2>
+<p>处理器类别或家族中的编号越高，表明其特性越多，但也会存在因为某种特性较强，另一种特性则较弱的可能。如果您选定了某个特定处理器品牌和类型，可与处理器编号比较以确认该处理器包括您需要的功能。</p>
+
+<p><a href="https://www.intel.cn/content/www/cn/zh/processors/processor-numbers.html?_ga=1.52051882.281579711.1486467137">每一代的型号含义</a></p>
+
+<p><img src="http://localhost:4000/pic/CPU_Introduction/cpuIdentity.jpg" /></p>
+<div class="text" style="text-align:center;font-weight:bold"> CPU型号</div>
+
+<p><img src="http://localhost:4000/pic/CPU_Introduction/cpuIdentitySuffix.jpg" /></p>
+<div class="text" style="text-align:center;font-weight:bold"> CPU型号后缀含义</div>
+
+<p>补充：<a href="http://diy.pconline.com.cn/718/7189243_all.html">link</a></p>
+<ul>
+  <li>Desktop
+    <ul>
+      <li>X代表Extreme，中文意思是至尊级，代表同一时代性能最强的CPU。如Core i7-5960X、Core i7-4960X。X代表在同一代中只有一款CPU黄袍加身，地位至高无上。加上没有竞争对手可以望其项背，从露面都退出市场，期待的弑君者没有出现。</li>
+      <li>自从Sandy Bridge时代Intel限制超频之后，K后缀成为了超频的标志。从i7-2600K开始到现在的i7-6700K，但凡带K后缀的CPU都解锁倍频，可自由调节。此外，K后缀还代表着同样数字型号的最高规格，比如i7-6700K的性能强于i7-6700。</li>
+      <li>T后缀的CPU在功耗上更加低，为45W或更低，频率也比S后缀的更低。比如2.5GHz-3.7GHz的i7-4770T（对比i7-4770K为3.4GHz-3.9GHz）。</li>
+      <li>R代表采用了Iris高性能核显（核心显卡）的R。Iris Pro代表了同类产品中核显最强的系列，比如i7-4770R、i7-5775R。不过这款产品的TDP为65W，为节能版。</li>
+      <li>结论：大多数消费者只需要考虑无字母后缀的CPU就行，毕竟它们定位大众。<strong>而追求性能或者超频发烧友就选择K后缀的高性能CPU</strong>。至于其他后缀的，由于定位不符合大众化，所以我们就接触得少。</li>
+    </ul>
+  </li>
+  <li>移动端
+    <ul>
+      <li>M代表了双核标准功耗版本的笔记本CPU。在四代或者以前的酷睿时代，性价比高，性能适中，让35W/37W的M后缀的CPU一直是主流笔记本的绝对主流，如大家耳熟能详的i5-4200M，i3-2310M等。可惜到了五代酷睿之后，M后缀的CPU成为了绝唱，我们再也找不到新一代标准功耗的双核CPU，i7-4610M成为了最后一款以单线程高频率为代表的高性能i7双核笔记本CPU。</li>
+      <li>太多了，不写了。</li>
+    </ul>
+  </li>
+</ul>
+
+
+                <hr style="visibility: hidden;">
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/caffe/2017/09/06/syncedmem/" data-toggle="tooltip" data-placement="top" title="Caffe（二）之 Syncedmem">
+                        Previous<br>
+                        <span>Caffe（二）之 Syncedmem</span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/other/2018/02/04/job/" data-toggle="tooltip" data-placement="top" title="JOB">
+                        Next<br>
+                        <span>JOB</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <hr style="visibility: hidden;">
+
+                
+                <!-- disqus 评论框 start -->
+                <div class="comment">
+                    <div id="disqus_thread" class="disqus-thread"></div>
+                </div>
+                <!-- disqus 评论框 end -->
+                
+
+                
+            </div>  
+
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+        
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+
+<section>
+    
+        <hr class="hidden-sm hidden-xs">
+    
+    <h5><a href="/archive/">FEATURED TAGS</a></h5>
+    <div class="tags">
+        
+        
+        
+        
+        
+        
+                <a data-sort="0028" 
+                    href="/archive/?tag=other"
+                    title="other"
+                    rel="6">other</a>
+        
+                <a data-sort="0020" 
+                    href="/archive/?tag=program"
+                    title="program"
+                    rel="14">program</a>
+        
+                <a data-sort="0029" 
+                    href="/archive/?tag=caffe"
+                    title="caffe"
+                    rel="5">caffe</a>
+        
+                <a data-sort="0030" 
+                    href="/archive/?tag=read"
+                    title="read"
+                    rel="4">read</a>
+        
+                <a data-sort="0031" 
+                    href="/archive/?tag=linux"
+                    title="linux"
+                    rel="3">linux</a>
+    </div>
+</section>
+
+
+                <!-- Friends Blog -->
+                
+<hr>
+<h5>FRIENDS</h5>
+<ul class="list-inline">
+  
+  <li><a href="http://mida.re/">乱序（Midare）</a></li>
+  
+  <li><a href="https://sherrywoo.me/">Sherry Woo</a></li>
+  
+  <li><a href="http://kunq.me">Kun Qian</a></li>
+  
+  <li><a href="http://ebnbin.com/">Ebn Zhang</a></li>
+  
+  <li><a href="http://blog.smdcn.net">SmdCn</a></li>
+  
+  <li><a href="http://tiye.me/">JiyinYiyong</a></li>
+  
+  <li><a href="http://dhong.co">DHong Say</a></li>
+  
+  <li><a href="http://ingf.github.io/">尹峰以为</a></li>
+  
+</ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- add support for mathjax by voleking-->
+
+
+
+
+
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "hux";
+    var disqus_identifier = "/program/2017/11/18/CPU_Introduction";
+    var disqus_url = "http://localhost:4000/program/2017/11/18/CPU_Introduction/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'right',
+          // icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- SNS Link -->
+                
+
+
+<ul class="list-inline text-center">
+
+
+  
+  
+  <li>
+    <a href="https://twitter.com/huxpro">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a target="_blank" href="https://www.zhihu.com/people/huxpro">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa  fa-stack-1x fa-inverse">知</i>
+      </span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a target="_blank" href="http://weibo.com/huxpro">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+  
+  
+  <li>
+    <a target="_blank" href="https://github.com/huxpro">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+  
+</ul>
+
+                <p class="copyright text-muted">
+                    Copyright &copy; Hux Blog 2021
+                    <br>
+                    Powered by <a href="http://huangxuan.me">Hux Blog</a> |
+                    <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px"
+                        height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=huxpro&repo=huxpro.github.io&type=star&count=true">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<!-- Currently, only navbar scroll-down effect at desktop still depends on this -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js "></script>
+
+<!-- Simple Jekyll Search -->
+<script src="/js/simple-jekyll-search.min.js"></script>
+
+<!-- Service Worker -->
+
+<script src="/js/snackbar.js "></script>
+<script src="/js/sw-registration.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!--
+     Because of the native support for backtick-style fenced code blocks
+     right within the Markdown is landed in Github Pages,
+     From V1.6, There is no need for Highlight.js,
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+
+
+
+
+
+<!--fastClick.js -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function () {
+        var $nav = document.querySelector("nav");
+        if ($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-49627206-1';
+    var _gaDomain = 'huangxuan.me';
+
+    // Originial
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        // interop with multilangual 
+        if ('' == 'true') {
+            _containerSelector = 'div.post-container.active'
+        } else {
+            _containerSelector = 'div.post-container'
+        }
+
+        // init
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        // clean
+        $(selector).html('')
+
+        // appending
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+<!-- Multi-Lingual -->
+
+
+<!-- Simple Jekyll Search -->
+<script>
+    // https://stackoverflow.com/questions/1912501/unescape-html-entities-in-javascript
+    function htmlDecode(input) {
+        var e = document.createElement('textarea');
+        e.innerHTML = input;
+        // handle case of empty input
+        return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+    }
+
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('search-results'),
+        json: '/search.json',
+        searchResultTemplate: '<div class="post-preview item"><a href="{url}"><h2 class="post-title">{title}</h2><h3 class="post-subtitle">{subtitle}</h3><hr></a></div>',
+        noResultsText: 'No results',
+        limit: 50,
+        fuzzy: false,
+        // a hack to get escaped subtitle unescaped. for some reason, 
+        // post.subtitle w/o escape filter nuke entire search.
+        templateMiddleware: function (prop, value, template) {
+            if (prop === 'subtitle' || prop === 'title') {
+                if (value.indexOf("code")) {
+                    return htmlDecode(value);
+                } else {
+                    return value;
+                }
+            }
+        }
+    });
+
+    $(document).ready(function () {
+        var $searchPage = $('.search-page');
+        var $searchOpen = $('.search-icon');
+        var $searchClose = $('.search-icon-close');
+        var $searchInput = $('#search-input');
+        var $body = $('body');
+
+        $searchOpen.on('click', function (e) {
+            e.preventDefault();
+            $searchPage.toggleClass('search-active');
+            var prevClasses = $body.attr('class') || '';
+            setTimeout(function () {
+                $body.addClass('no-scroll');
+            }, 400)
+
+            if ($searchPage.hasClass('search-active')) {
+                $searchClose.on('click', function (e) {
+                    e.preventDefault();
+                    $searchPage.removeClass('search-active');
+                    $body.attr('class', prevClasses);  // from closure 
+                });
+                $searchInput.focus();
+            }
+        });
+    });
+</script>
+
+
+<!-- Image to hack wechat -->
+<img src="/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

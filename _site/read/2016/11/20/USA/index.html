@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="关于程序与设计、黑客与画家 | 黄玄，Web & Mobile Lover，Software Engineer，UX Designer | 这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界。">
+    <meta name="keywords" content="黄玄, Hux黄玄, Hux, 鬼栈, huxpro, @huxpro, 黄玄的博客, Hux Blog, 博客, 个人网站, 互联网, Web, JavaScript, 前端, 设计">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Open Graph -->
+    <meta property="og:title"
+        content="USA - 黄玄的博客 | Hux Blog">
+    
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="Domain
+美利坚合众国,简称为美国，由50个州、华盛顿哥伦比亚特区、五个自治领土和外岛 共同组成的联邦共和国。美国本土48州和联邦特区位于北美洲中部，东临大西洋，西临太平洋，北面是加拿大，南部和墨西哥及墨西哥湾接壤.阿拉斯加州 位于北美大陆西北方，东部为加拿大，西隔白令海峡和俄罗斯相望；夏威夷州 则是太平洋中部的群岛。美国在加勒比海和太平洋还拥有多处境外领土和岛屿地区。此外，美国还在全球...">
+    
+    <meta property="article:published_time" content=" 2016-11-20T18:20:09Z">
+    
+    
+    
+    <meta property="article:tag" content="read">
+    
+    
+    <meta property="og:image" content="http://localhost:4000https://github.com/Huxpro.png">
+    <meta property="og:url" content="http://localhost:4000/read/2016/11/20/USA/">
+    <meta property="og:site_name" content="黄玄的博客 | Hux Blog">
+
+    <title>USA - 黄玄的博客 | Hux Blog</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://localhost:4000/read/2016/11/20/USA/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href=" /css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href=" /css/hux-blog.min.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    <!-- Google AdSense -->
+    <script data-ad-client="ca-pub-6487568398225121" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Hux Blog</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div id="huxblog_navbar">
+                <div class="navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <a href="/archive/">Archive</a>
+                        </li>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <li class="search-icon">
+                            <a href="javascript:void(0)">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <script>
+        // Drop Bootstarp low-performance Navbar
+        // Use customize navbar with high-quality material design animation
+        // in high-perf jank-free CSS3 implementation
+        var $body = document.body;
+        var $toggle = document.querySelector('.navbar-toggle');
+        var $navbar = document.querySelector('#huxblog_navbar');
+        var $collapse = document.querySelector('.navbar-collapse');
+
+        var __HuxNav__ = {
+            close: function () {
+                $navbar.className = " ";
+                // wait until animation end.
+                setTimeout(function () {
+                    // prevent frequently toggle
+                    if ($navbar.className.indexOf('in') < 0) {
+                        $collapse.style.height = "0px"
+                    }
+                }, 400)
+            },
+            open: function () {
+                $collapse.style.height = "auto"
+                $navbar.className += " in";
+            }
+        }
+
+        // Bind Event
+        $toggle.addEventListener('click', function (e) {
+            if ($navbar.className.indexOf('in') > 0) {
+                __HuxNav__.close()
+            } else {
+                __HuxNav__.open()
+            }
+        })
+
+        /**
+         * Since Fastclick is used to delegate 'touchstart' globally
+         * to hack 300ms delay in iOS by performing a fake 'click',
+         * Using 'e.stopPropagation' to stop 'touchstart' event from 
+         * $toggle/$collapse will break global delegation.
+         * 
+         * Instead, we use a 'e.target' filter to prevent handler
+         * added to document close HuxNav.  
+         *
+         * Also, we use 'click' instead of 'touchstart' as compromise
+         */
+        document.addEventListener('click', function (e) {
+            if (e.target == $toggle) return;
+            if (e.target.className == 'icon-bar') return;
+            __HuxNav__.close();
+        })
+    </script>
+    <!-- Search -->
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/img/home-bg.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+
+
+
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/img/home-bg.jpg');
+        background: ;
+    }
+
+    
+</style>
+
+<header class="intro-header" >
+
+    <div class="header-mask"></div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/archive/?tag=read" title="read">read</a>
+                        
+                    </div>
+                    <h1>USA</h1>
+                    
+                    <h2 class="subheading"></h2>
+                    <span class="meta">Posted by Hux Blog on November 20, 2016</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <!-- Multi-Lingual -->
+                
+
+				<h1 id="domain">Domain</h1>
+<p>美利坚合众国,简称为美国，由<strong>50个州</strong>、<strong>华盛顿哥伦比亚特区</strong>、<strong>五个自治领土</strong>和<strong>外岛</strong> 共同组成的联邦共和国。美国本土<strong>48州和联邦特区</strong>位于北美洲中部，东临大西洋，西临太平洋，北面是加拿大，南部和墨西哥及墨西哥湾接壤.<strong>阿拉斯加州</strong> 位于北美大陆西北方，东部为加拿大，西隔白令海峡和俄罗斯相望；<strong>夏威夷州</strong> 则是太平洋中部的群岛。美国在加勒比海和太平洋还拥有多处境外领土和岛屿地区。此外，美国还在全球140多个国家和地区拥有着374个海外军事基地。</p>
+
+<p>华盛顿哥伦比亚特区（英语：Washington, D.C.）是美利坚合众国的首都，位于美国东岸的中大西洋地区。1790年7月1日，国会通过《首都选址法》，决定将首都从<strong>纽约</strong>迁至波多马克河和安那考斯迪亚河汇合处附近。华盛顿哥伦比亚特区实际上是由<strong>美国国会直接管辖的特别行政区，因此不属于美国的任何州份</strong>。其又以原始名称为哥伦比亚特区（District of Columbia），以及简称华盛顿（Washington）、特区（”the District”）、D.C.等。中文简称华府。</p>
+
+<div style="text-align: center">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/United_States_1868-1876.png" />
+</div>
+
+<p><img src="http://localhost:4000/pic/2016-11-20-USA/USA_domain.png" /></p>
+
+<p><img src="http://localhost:4000/pic/2016-11-20-USA/USA_Minor_Outlying_Islands.png" /></p>
+
+<h1 id="election">Election</h1>
+
+<h2 id="选举人--选举人票">选举人 / 选举人票</h2>
+<p>根据美利坚合众国宪法第二条，总统由各州的【选举人】组成“选举人团”投票选出（所以美国选总统，不是“直接选举”，而是“间接选举”）。每个州的“选举人”人数等于该州的<strong>“参议员人数”加上“众议员人数”</strong> 。由于每州的<strong>参议员固定为2人</strong>，所以各个州的“选举人人数”的<strong>差异体现为“众议员人数差异”</strong> 。人口大州的众议员人数多，选举人的数量也多。（各州的众议员数量是根据当地人口划定，随着人口变迁，各州的众议员数量会出现微调）。另外，首都（华盛顿哥伦比亚特区）有3张选举人票。这是根据1960年的宪法第23修正案——首都可以拥有“选举人”，且选举人的人数【不得超过】人口最少的州的选举人人数。（美国人口最少的州是怀俄明州，拥有3张选举人票；而华盛顿特区的人口超过怀俄明，占有3票也不算过分）。最近这些年的大选，选举人票的总数是538（<strong>100名参议员 + 435名众议员 + 哥伦比亚特区3票</strong>）。对于总票数538，过半的当选门槛是270票。</p>
+
+<p>除缅因州及内布拉斯加州外，其它48个州及首都华盛顿特区均采用【赢家通吃】的方式——获得最多票数的那个候选人【全取】该州的选举人票。至于“缅因州及内布拉斯加州”，获最多票的候选人会取得两张选举人票，而其余的选举人票会按照“本州各个众议员选区的党派分布”进行分配</p>
+
+<p>大部分的州在最近几十年的选举中始终被某个大党赢得，这种州就称为“安全州”。比如<strong>“加州/CA”是民主党最大的安全州（55票），“德州/TX”是共和党最大的安全州（38票）</strong> 。因为安全州没有悬念，在每次大选中，两党通常都不会花太多精力在安全州。“关键摇摆州”有三个：<strong>“佛罗里达/FL”（29票）、“宾夕法尼亚/PA”（20票）、“俄亥俄/OH”（18票）。</strong> 自1960年以来，【所有】当选者，至少在这三个“关键摇摆州”中拿下两个。换句话说：半个世纪以来，没有拿到2个或2个以上“关键摇摆州”的候选人，都落选了。</p>
+
+<p>全国的支持率，<strong>不能</strong> 说明问题；更重要的是看摇摆州的民调——其参考意义明显大于全国民调。</p>
+
+<h2 id="选举人团制度-原因">选举人团制度 原因</h2>
+<ul>
+  <li>
+    <p>素质论<br />
+　　当年参与制宪会议的各州代表，大体上可以算作是“精英分子”。很自然的，他们会担心民众的素质不够高，容易被民粹主义所利用。而“间接选举”比“直接选举”更有利于防范民粹的风险。
+不得不说，开国元勋的担忧是有道理滴——两个半世纪之后的2016年大选，就充满了民粹的色彩（川普显然是煽动民粹的高手）。</p>
+  </li>
+  <li>
+    <p>各州之间无法统一<br />
+当时各州之间的矛盾，分成两个维度——其一是“大州与小州”的矛盾；其二是“北部废奴州与南部蓄奴州”的矛盾。
+　　对于第一种矛盾。很显然，小州会极力反对“一人一票”。因为当时的人口差距很悬殊，一个大州的人口顶得上好几个小州的人口总和。一旦搞“一人一票”，小州马上就被边缘化了。而如果得不到小州的认可，不要说起草宪法，整个联邦都无法组建起来。
+　　对于第二种矛盾。南部蓄奴州一方面认为黑奴只是物品，毫无人权可言。<strong>但是在划分众议院比例的时候（众议院按照人口比例划分），他们又说黑奴也要计算到州的总人口。</strong> 开制宪会议的时候，南北双方的代表为这个问题炒翻天，就差没动手群殴了。一直到了制宪会议临近结束的时候，南北双方才勉强达成某种妥协——<strong>每个黑奴按照“五分之三个人”计算（此算法到南北战争结束后才被废除）</strong>。根据这个算法，南部各州（折算后的）总人口会超过北部，因此南部州的众议员人数也会超过北部州。从这里就可以看出，<strong>南部州是肯定不会同意搞“一人一票”的</strong>。因为这样一来，黑奴的人口优势就体现不出来了。而且也会让南部州在选总统的时候处于劣势。</p>
+  </li>
+</ul>
+
+<p>最终采用的“选举人团制度”，每个州分配若干个选举人。每个州的“选举人数”等于该州“国会议员数”（参议员数+众议员数）。<strong>由于每州（不论人口多少）固定有2个参议员，小州的心理平衡了；而众议员数量是根据人口分配，大州的心理也平衡了。</strong>
+　　通过搞了这么一个选举人制度，既平衡了“大州小州的矛盾”，也平衡了“北部废奴州与南部蓄奴州的矛盾”。</p>
+
+<h2 id="赢者通吃">赢者通吃</h2>
+<p>“赢家通吃”的玩法，让这个州的所有选举人票都投向同一个候选人，有利于这个州的影响力最大化；反之，如果是按选民的投票比例划分选举人，那么这个州的影响力就【自相抵消】了。</p>
+
+<h1 id="民粹">民粹</h1>
+<p>民粹主义（英语：populism），又译平民主义、大众主义、人民主义、公民主义，意指平民论者所拥护的政治与经济理念，是社会科学语汇中最没有精确定义的名词之一，也可以被当成是一种政治哲学或是政治语言。川普显然是煽动民粹的高手。</p>
+
+
+                <hr style="visibility: hidden;">
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/linux/2016/07/06/ssh-notes/" data-toggle="tooltip" data-placement="top" title="SSH summary">
+                        Previous<br>
+                        <span>SSH summary</span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/linux/2016/12/07/Linux-PATH/" data-toggle="tooltip" data-placement="top" title="Linux—PATH">
+                        Next<br>
+                        <span>Linux—PATH</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <hr style="visibility: hidden;">
+
+                
+                <!-- disqus 评论框 start -->
+                <div class="comment">
+                    <div id="disqus_thread" class="disqus-thread"></div>
+                </div>
+                <!-- disqus 评论框 end -->
+                
+
+                
+            </div>  
+
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+        
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+
+<section>
+    
+        <hr class="hidden-sm hidden-xs">
+    
+    <h5><a href="/archive/">FEATURED TAGS</a></h5>
+    <div class="tags">
+        
+        
+        
+        
+        
+        
+                <a data-sort="0028" 
+                    href="/archive/?tag=other"
+                    title="other"
+                    rel="6">other</a>
+        
+                <a data-sort="0020" 
+                    href="/archive/?tag=program"
+                    title="program"
+                    rel="14">program</a>
+        
+                <a data-sort="0029" 
+                    href="/archive/?tag=caffe"
+                    title="caffe"
+                    rel="5">caffe</a>
+        
+                <a data-sort="0030" 
+                    href="/archive/?tag=read"
+                    title="read"
+                    rel="4">read</a>
+        
+                <a data-sort="0031" 
+                    href="/archive/?tag=linux"
+                    title="linux"
+                    rel="3">linux</a>
+    </div>
+</section>
+
+
+                <!-- Friends Blog -->
+                
+<hr>
+<h5>FRIENDS</h5>
+<ul class="list-inline">
+  
+  <li><a href="http://mida.re/">乱序（Midare）</a></li>
+  
+  <li><a href="https://sherrywoo.me/">Sherry Woo</a></li>
+  
+  <li><a href="http://kunq.me">Kun Qian</a></li>
+  
+  <li><a href="http://ebnbin.com/">Ebn Zhang</a></li>
+  
+  <li><a href="http://blog.smdcn.net">SmdCn</a></li>
+  
+  <li><a href="http://tiye.me/">JiyinYiyong</a></li>
+  
+  <li><a href="http://dhong.co">DHong Say</a></li>
+  
+  <li><a href="http://ingf.github.io/">尹峰以为</a></li>
+  
+</ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- add support for mathjax by voleking-->
+
+
+
+
+
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "hux";
+    var disqus_identifier = "/read/2016/11/20/USA";
+    var disqus_url = "http://localhost:4000/read/2016/11/20/USA/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'right',
+          // icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- SNS Link -->
+                
+
+
+<ul class="list-inline text-center">
+
+
+  
+  
+  <li>
+    <a href="https://twitter.com/huxpro">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a target="_blank" href="https://www.zhihu.com/people/huxpro">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa  fa-stack-1x fa-inverse">知</i>
+      </span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a target="_blank" href="http://weibo.com/huxpro">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+  
+  
+  <li>
+    <a target="_blank" href="https://github.com/huxpro">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+  
+</ul>
+
+                <p class="copyright text-muted">
+                    Copyright &copy; Hux Blog 2021
+                    <br>
+                    Powered by <a href="http://huangxuan.me">Hux Blog</a> |
+                    <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px"
+                        height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=huxpro&repo=huxpro.github.io&type=star&count=true">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<!-- Currently, only navbar scroll-down effect at desktop still depends on this -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js "></script>
+
+<!-- Simple Jekyll Search -->
+<script src="/js/simple-jekyll-search.min.js"></script>
+
+<!-- Service Worker -->
+
+<script src="/js/snackbar.js "></script>
+<script src="/js/sw-registration.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!--
+     Because of the native support for backtick-style fenced code blocks
+     right within the Markdown is landed in Github Pages,
+     From V1.6, There is no need for Highlight.js,
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+
+
+
+
+
+<!--fastClick.js -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function () {
+        var $nav = document.querySelector("nav");
+        if ($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-49627206-1';
+    var _gaDomain = 'huangxuan.me';
+
+    // Originial
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        // interop with multilangual 
+        if ('' == 'true') {
+            _containerSelector = 'div.post-container.active'
+        } else {
+            _containerSelector = 'div.post-container'
+        }
+
+        // init
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        // clean
+        $(selector).html('')
+
+        // appending
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+<!-- Multi-Lingual -->
+
+
+<!-- Simple Jekyll Search -->
+<script>
+    // https://stackoverflow.com/questions/1912501/unescape-html-entities-in-javascript
+    function htmlDecode(input) {
+        var e = document.createElement('textarea');
+        e.innerHTML = input;
+        // handle case of empty input
+        return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+    }
+
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('search-results'),
+        json: '/search.json',
+        searchResultTemplate: '<div class="post-preview item"><a href="{url}"><h2 class="post-title">{title}</h2><h3 class="post-subtitle">{subtitle}</h3><hr></a></div>',
+        noResultsText: 'No results',
+        limit: 50,
+        fuzzy: false,
+        // a hack to get escaped subtitle unescaped. for some reason, 
+        // post.subtitle w/o escape filter nuke entire search.
+        templateMiddleware: function (prop, value, template) {
+            if (prop === 'subtitle' || prop === 'title') {
+                if (value.indexOf("code")) {
+                    return htmlDecode(value);
+                } else {
+                    return value;
+                }
+            }
+        }
+    });
+
+    $(document).ready(function () {
+        var $searchPage = $('.search-page');
+        var $searchOpen = $('.search-icon');
+        var $searchClose = $('.search-icon-close');
+        var $searchInput = $('#search-input');
+        var $body = $('body');
+
+        $searchOpen.on('click', function (e) {
+            e.preventDefault();
+            $searchPage.toggleClass('search-active');
+            var prevClasses = $body.attr('class') || '';
+            setTimeout(function () {
+                $body.addClass('no-scroll');
+            }, 400)
+
+            if ($searchPage.hasClass('search-active')) {
+                $searchClose.on('click', function (e) {
+                    e.preventDefault();
+                    $searchPage.removeClass('search-active');
+                    $body.attr('class', prevClasses);  // from closure 
+                });
+                $searchInput.focus();
+            }
+        });
+    });
+</script>
+
+
+<!-- Image to hack wechat -->
+<img src="/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

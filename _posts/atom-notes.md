@@ -1,0 +1,5 @@
+- You can also add more than one directory to your current Atom window, by choosing "File >> Add Project Folder…​" from the menu bar or hitting cmd-shift-O.
+- You can also hide and show it with cmd-\
+- ctrl-0 will focus it。 When the Tree view has focus you can press a, m, or delete to add, move or delete files and folders.
+- If you hit either cmd-T or cmd-P, the Fuzzy Finder dialog will pop up. This will let you quickly search for any file in any directory your project by typing parts of the path.
+- You can also search through only the files currently opened (rather than every file in your project) with cmd-B. 
