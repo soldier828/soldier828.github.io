@@ -1,3 +1,4 @@
 _posts_demo
 .jekyll-cache
 _site
+.DS_Store
