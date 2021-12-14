@@ -1,4 +1,4 @@
-[Hux Blog](https://huangxuan.me)
+[My Blog](https://soldier828.github.io)
 ================================
 
 > I never expect this becomes popular.
