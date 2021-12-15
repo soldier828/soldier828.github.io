@@ -139,9 +139,9 @@ Peano空间填充曲线最大的缺点就是突变性，有些编码相邻但距
 6位即 `5*6=30`， 15个纬度，15个经度，所以经纬度长宽一样。
 
 下面几个图实际感受geo4,geo5,geo6的空间尺度。
-<img src="{{ site.url }}/img/geohash/geo4.png">
-<img src="{{ site.url }}/img/geohash/geo5.png">
-<img src="{{ site.url }}/img/geohash/geo6.png">
+<img src="{{ site.url }}/img/geohash/geo4.jpg">
+<img src="{{ site.url }}/img/geohash/geo5.jpg">
+<img src="{{ site.url }}/img/geohash/geo6.jpg">
 
 ## Hash Size
 
