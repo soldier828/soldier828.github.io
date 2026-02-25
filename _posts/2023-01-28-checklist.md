@@ -7,7 +7,7 @@ author:     "Soldier828"
 header-img: "img/post-bg-universe.jpg"
 catalog: true
 tags:
-    - investment
+    - 钻研
 ---
 
 - 房子

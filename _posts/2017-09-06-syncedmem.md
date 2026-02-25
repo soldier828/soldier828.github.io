@@ -2,8 +2,9 @@
 layout: post
 title:  "Caffe（二）之 Syncedmem"
 date:   2017-09-06 12:00:00 +0800
-categories: caffe
-tag: caffe
+catalog: true
+tags:
+    - 编程
 ---
 
 

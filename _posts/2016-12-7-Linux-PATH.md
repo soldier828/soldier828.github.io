@@ -2,8 +2,9 @@
 layout: post
 title:  "Linux—PATH"
 date:   2016-12-7 18:20:09 +0800
-categories: linux
-tag: linux
+catalog: true
+tags:
+    - 编程
 ---
 # virtualenv
 基于python、pip的虚拟环境，可以为一个项目开发一个单独的环境，不影响外界的依赖。

@@ -2,8 +2,9 @@
 layout: post
 title:  "caffe_install"
 date:   2017-01-13 14:20:09 +0800
-categories: caffe
-tag: caffe
+catalog: true
+tags:
+    - 编程
 ---
 # INSTALL CAFEE ALL
 NVIDIA driver & CUDA & cuDNN & Caffe Installation

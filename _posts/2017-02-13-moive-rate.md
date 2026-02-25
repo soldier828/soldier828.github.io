@@ -2,8 +2,9 @@
 layout: post
 title:  "moive-rate"
 date:   2017-02-13 14:20:09 +0800
-categories: read
-tag: read
+catalog: true
+tags:
+    - 读书
 ---
 
 ## G Rating

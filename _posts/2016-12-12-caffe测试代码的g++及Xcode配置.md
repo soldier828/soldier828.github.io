@@ -2,8 +2,9 @@
 layout: post
 title:  "caffe测试代码的g++及Xcode配置"
 date:   2016-12-12 16:11:09 +0800
-categories: caffe
-tag: caffe
+catalog: true
+tags:
+    - 编程
 ---
 
 # g++ 头文件及库的添加

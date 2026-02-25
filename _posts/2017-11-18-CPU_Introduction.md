@@ -2,8 +2,9 @@
 layout: post
 title:  "CPU_Introduction"
 date:   2017-11-18 14:20:09 +0800
-categories: program
-tag: program
+catalog: true
+tags:
+    - 编程
 ---
 
 

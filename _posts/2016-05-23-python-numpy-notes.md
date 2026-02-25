@@ -2,8 +2,9 @@
 layout: post
 title:  "Numpy notes"
 date:   2016-05-23 14:20:09 +0800
-categories: program
-tag: program
+catalog: true
+tags:
+    - 编程
 ---
 
 

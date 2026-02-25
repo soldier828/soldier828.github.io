@@ -2,8 +2,9 @@
 layout: post
 title:  "caffe_python_network"
 date:   2017-01-14 14:20:09 +0800
-categories: caffe
-tag: caffe
+catalog: true
+tags:
+    - 编程
 ---
 
 # python代码生成caffe网络的prototxt

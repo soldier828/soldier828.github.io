@@ -7,8 +7,7 @@ author:     "Soldier828"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - LBS
-    - Theory
+    - 编程
 ---
 
 > From Wikipedia
